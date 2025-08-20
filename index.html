@@ -1,165 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quarterly Earnings — Interactive RevealJS Deck</title>
-
-  <!-- RevealJS core & theme (CDN) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" id="theme">
-
-  <!-- Optional: a tiny bit of custom styling -->
-  <style>
-    :root { --r-main-font-size: calc(0.6vw + 0.6vh + 0.6vmin); }
-    .chart { width: 100%; height: 50vh; }
-    .byline { font-size: 0.8em; opacity: 0.8; }
-    .pill { display: inline-block; padding: .25em .6em; border-radius: 9999px; border: 1px solid #e5e7eb; }
-    footer { position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.7em; color: #555; }
-  </style>
+    <title>Quarterly Earnings Report</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/black.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
 </head>
 <body>
-  <div class="reveal">
-    <div class="slides">
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Q2 2025 Earnings Report</h1>
+                <p>Presented by: The Technical Team</p>
+                <p>Contact: 23f1001911@ds.study.iitm.ac.in</p>
+            </section>
 
-      <!-- TITLE -->
-      <section>
-        <h1>Quarterly Earnings Report</h1>
-        <h3 class="byline">Interactive HTML Presentation (RevealJS)</h3>
-        <p class="byline">Prepared by: Technical Consultant</p>
-        <p class="byline">Contact: <strong>23f1001911@ds.study.iitm.ac.in</strong></p>
-        <p><span class="pill">Use ← → to navigate</span></p>
-        <aside class="notes">
-          Welcome the audience, explain that this deck is fully web-based (RevealJS) and hosted on GitHub Pages. Mention keyboard help with the <kbd>?</kbd> key and speaker notes with <kbd>S</kbd>.
-        </aside>
-      </section>
+            <section data-markdown>
+                <textarea data-template>
+                    ## Report Highlights
 
-      <!-- MARKDOWN SLIDE (at least one) -->
-      <section data-markdown>
-        <textarea data-template>
-## Agenda (Markdown)
+                    - **Strong Revenue Growth:** A significant increase driven by new product lines.
+                    - **Operational Efficiency:** Our new automated workflows reduced costs by **15%**.
+                    - **Market Position:** We have secured a leading position in the **Fintech** sector.
 
-- Financial highlights _(Revenue, EBITDA, EPS)_
-- Segment performance
-- Guidance & outlook
-- Q&A
+                    ---
 
----
+                    ## Our Strategic Outlook
 
-### Highlights Snapshot
+                    We are committed to sustained growth through innovation, market diversification, and a focus on customer-centric solutions. Our next quarter's roadmap includes a major platform upgrade.
+                </textarea>
+            </section>
 
-- **Revenue growth:** +12% YoY
-- **Operating margin:** 19.3%
-- **EPS (diluted):** ₹12.40
+            <section>
+                <h2>Key Performance Metrics</h2>
+                <ul>
+                    <li class="fragment fade-up">Revenue: +25% YoY</li>
+                    <li class="fragment fade-up">Net Income: $120M</li>
+                    <li class="fragment fade-up">Operating Margin: 18%</li>
+                    <li class="fragment fade-up">Customer Acquisition Cost (CAC): Reduced by 8%</li>
+                </ul>
+            </section>
 
-*Tip:* Press **O** for overview.
-        </textarea>
-        <aside class="notes">This slide demonstrates Markdown support. Keep bullets short; we’ll deep-dive in later sections.</aside>
-      </section>
-
-      <!-- FRAGMENTS: animated reveal of bullets -->
-      <section>
-        <h2>Key Drivers (Fragments)</h2>
-        <ul>
-          <li class="fragment">Subscription revenue expansion in APAC</li>
-          <li class="fragment">Cloud migration cost optimizations</li>
-          <li class="fragment fade-up">FX tailwinds and pricing discipline</li>
-          <li class="fragment highlight-current-blue">Lower churn in enterprise tier</li>
-        </ul>
-        <aside class="notes">Reveal each driver and give a one-liner on impact. Pause after each fragment for questions.</aside>
-      </section>
-
-      <!-- CODE with syntax highlighting & line numbers -->
-      <section>
-        <h2>KPIs as Code (Sample)</h2>
-        <pre><code class="language-python" data-line-numbers="1-3|5,8-10|12">
+            <section>
+                <h2>Data Analysis with Pandas</h2>
+                <pre>
+                    <code class="python" data-line-numbers="1,3-5|7">
 import pandas as pd
-import numpy as np
+# Load the data from a CSV file
+df = pd.read_csv('earnings_data.csv')
+# Calculate the total revenue
+total_revenue = df['revenue'].sum()
+# Print the result to console
+print(f"Total revenue for the quarter: ${total_revenue:,}")
+                    </code>
+                </pre>
+            </section>
 
-# Load quarterly KPIs
-kpi = pd.DataFrame({
-    'revenue': [1325, 1460, 1510, 1660],
-    'ebitda' : [240,  265,  290,  320],
-    'eps'    : [9.8, 10.6, 11.4, 12.4]
-})
+            <section>
+                <h2>Capital Asset Pricing Model (CAPM)</h2>
+                <p>We use CAPM to determine the expected return on our investments.</p>
+                $$ R_a = R_f + \beta_a(R_m - R_f) $$
+                <p class="fragment fade-in">Where: <br> $R_a$ = Expected Return <br> $R_f$ = Risk-Free Rate <br> $\beta_a$ = Beta of the Asset <br> $R_m$ = Expected Market Return</p>
+            </section>
 
-# Compute margin
-kpi['margin'] = (kpi['ebitda'] / kpi['revenue']) * 100
-print(kpi.round(2))
-        </code></pre>
-        <aside class="notes">Explain syntax highlighting and progressive line focus. Emphasize transparency: numbers can be reproduced from source data.</aside>
-      </section>
+            <section>
+                <h2>Future Projections</h2>
+                <p>Our projections for Q3 and Q4 indicate continued growth, building on the strong foundation of this quarter.</p>
+                <aside class="notes">
+                    <h3>Presenter Notes:</h3>
+                    <p>Remember to highlight the positive trend in our projections. Be prepared to answer questions about the specific drivers of this growth. We will focus on the new market opportunities and our plans to leverage emerging technologies.</p>
+                    <p>It's important to frame this as a long-term strategy, not just a one-quarter success.</p>
+                </aside>
+            </section>
 
-      <!-- MATH: financial formulas via MathJax -->
-      <section>
-        <h2>Financial Formulas (MathJax)</h2>
-        <p>Discounted Cash Flow (NPV):</p>
-        <p>\[ \text{NPV} = \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t} - C_0 \]</p>
-        <p>Compound Annual Growth Rate (CAGR):</p>
-        <p>\[ \text{CAGR} = \left(\frac{\text{Ending}}{\text{Beginning}}\right)^{\tfrac{1}{n}} - 1 \]</p>
-        <aside class="notes">Walk stakeholders through the discount rate selection and sensitivity analyses. These formulas drive our valuation and guidance.</aside>
-      </section>
-
-      <!-- Dedicated Email Slide -->
-      <section>
-        <h2>Contact Information</h2>
-        <p><strong>Email:</strong> <a href="mailto:23f1001911@ds.study.iitm.ac.in">23f1001911@ds.study.iitm.ac.in</a></p>
-        <aside class="notes">This slide is here to meet any validation requirement. Email displayed prominently.</aside>
-      </section>
-
-      <!-- SIMPLE LIVE DEMO AREA (optional placeholder) -->
-      <section>
-        <h2>Live Demo Placeholder</h2>
-        <p>Embed product or analytics demo:</p>
-        <iframe data-src="https://example.com" data-preload style="width:100%; height:60vh; border:0;"></iframe>
-        <aside class="notes">If the demo requires auth, show a recorded clip instead. Keep live demos under 2 minutes.</aside>
-      </section>
-
-      <!-- SPEAKER NOTES EXAMPLE -->
-      <section>
-        <h2>Guidance & Outlook</h2>
-        <p>FY Revenue growth: <span class="fragment">10–13%</span>, Margin: <span class="fragment">18–20%</span></p>
-        <aside class="notes">State the range, then risks: macro demand, currency, and competitive pricing. Reiterate capital allocation priorities.</aside>
-      </section>
-
-      <!-- CONTACT / URL with cache-busting tip -->
-      <section>
-        <h2>Access on GitHub Pages</h2>
-        <p>URL pattern: <code>https://&lt;USER&gt;.github.io/&lt;REPO&gt;/</code></p>
-        <p class="byline">Add <code>?v=1</code>, <code>?v=2</code>, … to refresh cached content.</p>
-        <p class="byline">Contact: <strong>23f1001911@ds.study.iitm.ac.in</strong></p>
-        <aside class="notes">If updates don’t show, append a version query e.g., <code>?v=3</code>. Also try hard refresh (Ctrl/Cmd+Shift+R).</aside>
-      </section>
-
+        </div>
     </div>
-  </div>
-
-  <footer>Email: 23f1001911@ds.study.iitm.ac.in</footer>
-
-  <!-- RevealJS core JS -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
-
-  <!-- Plugins: Markdown, Highlight, Math, Notes -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
-
-  <script>
-    Reveal.initialize({
-      width: 1280,
-      height: 720,
-      margin: 0.04,
-      controls: true,
-      progress: true,
-      history: true,
-      transition: 'slide',
-      plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ],
-      math: {
-        katex: 'https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/',
-        config: 'TeX-AMS_HTML'
-      }
-    });
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'slide',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealMath ]
+        });
+    </script>
 </body>
 </html>
